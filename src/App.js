@@ -13,6 +13,7 @@ function App() {
     fetch(apiURL)
       .then((resp) => resp.json())
       .then((data) => setEvents(data.events));
+    console.log("You clicked me!");
   }
   return (
     <div className="App">
@@ -21,7 +22,7 @@ function App() {
         {/*<h2 className="Schedule">SCHEDULE</h2>*/}
         <br></br>
         <Button
-          id="7"
+          id="s"
           onClick={fetchEvents}
           type="button"
           buttonStyle="btn--primary--solid"
@@ -30,7 +31,7 @@ function App() {
         >
           Schedule
         </Button>
-        {/*<Button
+        <Button
           id="7"
           onClick={fetchEvents}
           type="button"
@@ -120,45 +121,7 @@ function App() {
           buttonPosition="btn--bottomright"
         >
           Aug 15 Sat
-        </Button>*/}
-        <div className="events">
-          {events &&
-            events.map((event, index) => {
-              const date = moment
-                .unix(event.startTime)
-                .tz("America/Chicago")
-                .format();
-              const day = new Date(date).toDateString();
-              const from = moment
-                .unix(event.startTime)
-                .tz("America/Chicago")
-                .format()
-                .substring(11, 16);
-              const to = moment
-                .unix(event.endTime)
-                .tz("America/Chicago")
-                .format()
-                .substring(11, 16);
-              const description = event.description;
-              return (
-                <div className="event" key={index}>
-                  <h2>{event.name}</h2>
-                  <div className="details">
-                    {description === " " ? null : <p>{description}</p>}
-                    <p>{day}</p>
-                    {from !== to ? (
-                      <p>
-                        {from}-{to}
-                      </p>
-                    ) : (
-                      <p>{from}</p>
-                    )}
-                    <p>Event Type: {event.eventType}</p>
-                  </div>
-                </div>
-              );
-            })}
-        </div>
+        </Button>
       </header>
     </div>
   );

@@ -4,13 +4,13 @@ import moment from "moment";
 import "moment-timezone";
 /*import { Events } from "./events.jsx";*/
 
-export function Display({ id }) {
-  const [events, setEvents] = useState(null);
+export function Display({ events, id }) {
+  /*const [events, setEvents] = useState(null);
   const apiURL = "https://api.hackillinois.org/event/";
 
   fetch(apiURL)
     .then((resp) => resp.json())
-    .then((data) => setEvents(data.events));
+    .then((data) => setEvents(data.events));*/
   return (
     <div className="events">
       {events &&
@@ -35,10 +35,15 @@ export function Display({ id }) {
             <div className="event" key={index}>
               <h2>{event.name}</h2>
               <div className="details">
-                {description === " " ? null : <p>Description: {description}</p>}
-                <p>Day: {day}</p>
-                <p>From: {from}</p>
-                {from !== to ? <p>To: {to}</p> : null}
+                <p>{day}</p>
+                {description === " " ? null : <p>{description}</p>}
+                {from !== to ? (
+                  <p>
+                    {from}-{to}
+                  </p>
+                ) : (
+                  <p>{from}</p>
+                )}
                 <p>Event Type: {event.eventType}</p>
               </div>
             </div>
