@@ -25,12 +25,6 @@
   background-size: cover;
 }
 
-.Schedule {
-  text-align: right;
-  position: absolute;
-  left: 80%;
-}
-
 .events {
   display: flex;
   flex-wrap: wrap;
