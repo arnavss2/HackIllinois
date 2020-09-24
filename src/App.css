@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 15vmin;
+  pointer-events: none;
+  position: absolute;
+  top: 5%;
+  left: 6%;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  justify-content: right;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  background-image: url(./background.jpg);
+  background-size: cover;
+}
+
+.Schedule {
+  text-align: right;
+  position: absolute;
+  left: 80%;
+}
+
+.events {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.event {
+  position: relative;
+  left: 22.5%;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 10px;
+  width: 47%;
+  background-color: #2c8ec8;
+}
+
+.event h2 {
+  font-size: 1.8rem;
+}
+
+.details {
+  text-align: left;
+}
